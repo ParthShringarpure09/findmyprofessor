@@ -1,4 +1,6 @@
 from pydantic import BaseModel
+from typing import Literal
+
 
 
 class Institution(BaseModel):
@@ -7,3 +9,8 @@ class Institution(BaseModel):
     country_code: str | None
     ror: str | None
     type: str | None
+
+class TopicScore(BaseModel):
+    name: str
+    score: float
+    source: Literal["openalex", "clustered"]
